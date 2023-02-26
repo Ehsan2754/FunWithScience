@@ -1,6 +1,6 @@
 # !bash 
-TARGET_DIR="docs/"
-NOTEBOOKS_DIR="notebooks/"
+TARGET_DIR="docs/slides/"
+NOTEBOOKS_DIR="notebooks/.ipynb/"
 
 
 mkdir -p "$TARGET_DIR.html"
@@ -12,4 +12,5 @@ for FILE in ${NOTEBOOKS_DIR}*.ipynb; do
 done;
 echo "Moving generated .html assests";
 mv -v ${NOTEBOOKS_DIR}*.html $TARGET_DIR;
+rm -r $TARGET_DIR/.html
 echo "Finished generating";

@@ -1,6 +1,6 @@
 # !bash 
-TARGET_DIR="docs/"
-NOTEBOOKS_DIR="notebooks/"
+TARGET_DIR="docs/slides/"
+NOTEBOOKS_DIR="notebooks/.ipynb/"
 
 
 mkdir -p "$TARGET_DIR.html"
@@ -11,5 +11,7 @@ for FILE in ${NOTEBOOKS_DIR}.ipynb/*.ipynb; do
     jupyter nbconvert --to slides html  $FILE;
 done;
 echo "Moving generated .html assests";
-mv -v ${NOTEBOOKS_DIR}.ipynb/*.html $TARGET_DIR;
+mv -v ${NOTEBOOKS_DIR}*.html $TARGET_DIR;
+rm -r $TARGET_DIR/.html
+
 echo "Finished generating";
